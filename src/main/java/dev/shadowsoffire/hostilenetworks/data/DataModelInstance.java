@@ -70,7 +70,7 @@ public class DataModelInstance implements TooltipComponent {
 
     public void setData(int data) {
         this.data = data;
-        if (this.data > this.getNextTierData()) {
+        if (this.data >= this.getNextTierData()) {
             this.tier = ModelTierRegistry.next(getTier()).asHolder();
         }
         DataModelItem.setData(this.stack, data);
